@@ -1,0 +1,41 @@
+{
+  "name": "pathed",
+  "version": "0.0.1",
+  "description": "Get and set values in nested objects using a path",
+  "type": "module",
+  "main": "./dist/pathed.cjs",
+  "module": "./dist/pathed.js",
+  "scripts": {
+    "test": "htest test",
+    "build:html": "",
+    "build:docs": "npx typedoc --out docs src/",
+    "build:js": "npx rollup -c",
+    "build": "npm run build:html && npm run build:js && npm run build:docs",
+    "lint": "eslint . --ext .js --ext .ts --ext .cjs --fix",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leaverou/pathed.git"
+  },
+  "keywords": [
+    "Path",
+    "JSON"
+  ],
+  "author": "Lea Verou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leaverou/pathed/issues"
+  },
+  "homepage": "https://github.com/leaverou/pathed/#readme",
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest",
+    "htest.dev": "latest",
+    "release-it": "latest",
+    "rollup": "^2",
+    "typedoc": "latest"
+  }
+}
