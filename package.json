@@ -6,7 +6,7 @@
   "main": "./dist/pathed.cjs",
   "module": "./dist/pathed.js",
   "scripts": {
-    "test": "htest test",
+    "test": "npx htest test/index.js",
     "build:html": "",
     "build:docs": "npx typedoc --out docs src/",
     "build:js": "npx rollup -c",
@@ -33,7 +33,7 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "latest",
-    "htest.dev": "latest",
+    "htest.dev": "file:../htest.dev",
     "release-it": "latest",
     "rollup": "^2",
     "typedoc": "latest"

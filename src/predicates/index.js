@@ -1,5 +1,5 @@
 export { default as name } from "./name.js";
-export { default as any } from "./any.js";
+export { default as nameIgnoreCase } from "./name-i.js";
 export { default as or } from "./or.js";
 export { default as has } from "./has.js";
 export { default as regexp } from "./regexp.js";

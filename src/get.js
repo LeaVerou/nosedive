@@ -21,4 +21,6 @@ export default function get (obj, path) {
 			acc = descend(acc, key);
 		}
 	}
+
+	return acc;
 }

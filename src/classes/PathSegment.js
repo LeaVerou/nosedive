@@ -22,6 +22,11 @@ export default class PathSegment {
 		else {
 			// Predicate object
 			for (let key in spec) {
+				if (key === "name" && !spec.ignoreCase) {
+					this.name = spec.name;
+					continue;
+				}
+
 				let predicate = Predicate.from(key, spec[key]);
 
 				if (predicate) {
@@ -53,12 +58,12 @@ export default class PathSegment {
 	}
 
 	/**
-	 * If this path segment can be resolved with a single property reference, return that property.
-	 * Otherwise, return undefined.
-	 * @returns { string | number | Symbol | undefined }
+	 * Return a single value if this path segment is a static property name.
+	 * Otherwise, return an array of values.
+	 * @returns { any | any[] }
 	 */
 	get (object) {
-		return this.name !== undefined ? object[this.name] : this.values();
+		return this.name !== undefined ? object[this.name] : this.values(object);
 	}
 
 	entry (object) {
@@ -77,6 +82,10 @@ export default class PathSegment {
 	}
 
 	entries (object) {
+		if (!object) {
+			return [];
+		}
+
 		if (this.name !== undefined) {
 			return [this.name, object[this.name]];
 		}
@@ -101,6 +110,8 @@ export default class PathSegment {
 				return object[prop];
 			}
 		}
+
+		return this.values(object)[0];
 	}
 
 	values (object) {
@@ -123,6 +134,11 @@ export default class PathSegment {
 	}
 
 	keys (object) {
+		if (!object) {
+
+			return [];
+		}
+
 		if (this.name !== undefined) {
 			return [this.name];
 		}

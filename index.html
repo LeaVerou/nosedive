@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pathed</title>
+	<script type="module">
+		import { get } from "./src/index.js";
+		let obj1 = {
+			a: {
+				b: {
+					c: 1
+				},
+				d: 5
+			},
+			arr: [
+				{b: 2},
+				{b: 3},
+				{b: 4}
+			]
+		};
+
+		console.log(get(obj1, ["a", "*"]));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

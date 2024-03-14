@@ -1,5 +1,5 @@
 import { getPath } from "../util.js";
-import has from "../../get.js";
+import has from "../get.js";
 import Predicate from "../classes/Predicate.js";
 
 export default class HasPredicate extends Predicate {

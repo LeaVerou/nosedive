@@ -13,6 +13,7 @@ export default function descend (object, pathSegment, o) {
 		return object;
 	}
 
+	// FIXME if literal wildcard property exists, this will just return that
 	if (pathSegment in object) {
 		return object[pathSegment];
 	}
